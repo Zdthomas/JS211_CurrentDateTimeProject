@@ -14,10 +14,22 @@ const displayDate = () => {
 }
  
 
+let firstNum = '';
+let secondNum = '';
+let operatoration = '';
+
 // Write a JavaScript program to convert a number to a string.
+function saveFirstNumber(num) {
+  console.log(num)
+  firstNum = parseInt(num);
+  console.log(firstNum)
+}
 
-
-
+function saveSecondNumber (num) {
+  console.log(num)
+  secondNum = parseInt(num);
+  console.log(secondNum)
+}
 // Write a JavaScript program to convert a string to the number.
 
 
@@ -34,9 +46,79 @@ const displayDate = () => {
   
 // Write a JavaScript program that adds 2 numbers together.
 
+const add = (firstNum, secondNum) => {
+  const sum = firstNum + secondNum
+  return sum}
 
+const changeOperation = (chosenOperation) => {
+    operation = chosenOperation
+    console.log(operation)
+  }
 
+  const putResultInElement = (operationResults) => {
+    document.getElementById("result").innerHTML = "Results: " + operationResults
+  
+  } 
+  
+  const equals = () => {
+    putResultInElement(add(firstNum, secondNum))
+  }
 // Write a JavaScript program that runs only when 2 things are true.
+
+// let value1 = '';
+
+// let value2 = '';
+
+const form = document.querySelector('#values');
+
+const testInput = document.querySelector('.value1');
+ 
+const testInput2 = document.querySelector('.value2');
+
+const testValue = document.querySelector('#testResults');
+
+form.addEventListener ('submit', function(event) {
+  event.preventDefault();
+  
+  console.log(typeof testInput.value)
+
+  if (!isFalsy(testInput.value) && !isFalsy(testInput2.value)) {
+    testResults.textContent = `${testInput.value} is a truthy value. ${testInput2.value} is a truthy value.`
+    
+
+  } else if (isFalsy(testInput.value) && !isFalsy(testInput2.value)) {
+    testResults.textContent = `${testInput.value} is a false value.` + ` ` + `${testInput2.value} is truthy value.`
+    // testResults.textContent = `${testInput2.value} is truthy value.`
+  } else if (!isFalsy(testInput.value) && isFalsy(testInput2.value)) {
+    testResults.textContent = `${testInput.value} is a truthy value.` + ` ` + `${testInput2.value} is a false value.`
+  } else {
+    testResults.textContent = `${testInput.value} is a false value.` + ` ` + `${testInput2.value} is a false value.`
+  }
+
+
+});
+
+
+
+
+function isFalsy(value) {
+  if (value === 'undefined') {
+    return true;
+  } else if (value === 'null') {
+    return true;
+  } else if (value === '0') { 
+    return true;
+  } else if (value === '') {
+    return true;
+  } else if (value === 'NaN') {
+    return true
+  } else {
+    return false
+  }
+}
+
+
+// testinput typeof for datatype (typeof testInput/ testinput.value)
 
 
 

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <script src="main.js"></script>
+    
   </head>
   <body>
     <h1>Hello World!</h1>
@@ -11,5 +11,23 @@
     <div id="display-element"></div>
     <button onclick="displayDate()">Click Me</button>
     <hr/>
+    <form>
+      <input type="number" id="first-Number" name="first-Number" value="" onchange="saveFirstNumber(this.value)">
+      <input type="number" id="second-Number" name="second-Number" value="" onchange="saveSecondNumber(value)"> 
+      <button type="button" name="add" id="addition" onclick="changeOperation(this.id)">Add</button>
+    </form>
+    <button type="button" onclick="equals()">Equals</button>
+    <div id="result"></div>
+
+    <hr/>
+    <form id="values">
+      <input type="text" class="value1" name="value1">
+      <input type="text" class="value2" name="value2" >
+
+      <button type="submit" name="Submit" id="submit" onclick="isFalsy()">Check</button>
+    </form>
+    <div id="testResults"></div>
+
+  <script src="main.js"></script>  
   </body>
 </html>
